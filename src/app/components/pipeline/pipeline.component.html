@@ -1,0 +1,175 @@
+<h2>
+    <span>Pipeline</span>
+    <span class="spacer"></span>
+    <button mat-icon-button style="border-width: 0px;" (click)="onLoadPipeline()">
+        <i class="pe-7s-refresh"></i>
+    </button>
+</h2>
+<div class="scrollmenu">
+    <p>
+        <mat-button-toggle-group name="fontStyle" aria-label="Font Style">
+            <input matInput #input class="form-control search-input"
+                placeholder="Ingrese nombre de prospecto o cliente a buscar" [(ngModel)]="search" name="search"
+                required>
+
+            <mat-button-toggle value="search" (click)="onLoadPipeline()">Buscar</mat-button-toggle>
+            <mat-button-toggle value="Prospect" (click)="onAddNewProspect()">
+                <i class="pe-7s-plus" style="font-size: 30px;"></i>&nbsp;Agregar Prospecto
+            </mat-button-toggle>
+            <mat-button-toggle value="prospect">Prospectos</mat-button-toggle>
+            <mat-button-toggle value="Call">Llamadas</mat-button-toggle>
+            <mat-button-toggle value="Contact">Contactos</mat-button-toggle>
+            <mat-button-toggle value="Account">Cuentas</mat-button-toggle>
+            <mat-button-toggle value="opportunity">Opportunidades</mat-button-toggle>
+            <mat-button-toggle value="Quote">Cotizaciones</mat-button-toggle>
+            <mat-button-toggle value="leadUpward">
+                <i class="pe-7s-up-arrow" style="font-size: 30px;"></i>
+            </mat-button-toggle>
+            <mat-button-toggle value="leadFalling">
+                <i class="pe-7s-bottom-arrow" style="font-size: 30px;"></i>
+            </mat-button-toggle>
+        </mat-button-toggle-group>
+    </p>
+    <div cdkDropListGroup style="width: 2450px;">
+        <div class="example-container">
+            <h2>1. Captado</h2>
+            <div cdkDropList [cdkDropListData]="captados" class="example-list" (cdkDropListDropped)="drop($event)">
+                <div class="example-box" *ngFor="let item of captados" cdkDrag>
+                    <b>Nombre:</b>{{item.nombre}}<br>
+                    <b>Celular:</b>{{item.celular}}<br>
+                    <b>Departamento:</b>{{item.departamento}}<br>
+                    <b>¿Cómo se entero?:</b>{{item.origen}}<br>
+                    <b>Grado de intéres:</b>{{item.nombre}}<br>
+                    <b>Equipo:</b>{{item.nombre}}<br>
+                    <b>Asignado a:</b>{{item.nombre}}<br>
+                </div>
+            </div>
+        </div>
+        <div class="example-container">
+            <h2>2. Interes</h2>
+            <div cdkDropList [cdkDropListData]="interesados" class="example-list" (cdkDropListDropped)="drop($event)">
+                <div class="example-box" *ngFor="let item of interesados" cdkDrag> 
+                    <b>Nombre:</b>{{item.nombre}}<br>
+                    <b>Celular:</b>{{item.celular}}<br>
+                    <b>Departamento:</b>{{item.departamento}}<br>
+                    <b>¿Cómo se entero?:</b>{{item.origen}}<br>
+                    <b>Grado de intéres:</b>{{item.nombre}}<br>
+                    <b>Equipo:</b>{{item.nombre}}<br>
+                    <b>Asignado a:</b>{{item.nombre}}<br>
+                </div>
+            </div>
+        </div>
+        <div class="example-container">
+            <h2>3. Visita física / virtual</h2>
+            <div cdkDropList [cdkDropListData]="visitas" class="example-list" (cdkDropListDropped)="drop($event)">
+                <div class="example-box" *ngFor="let item of visitas" cdkDrag>
+                    <b>Nombre:</b>{{item.nombre}}<br>
+                    <b>Celular:</b>{{item.celular}}<br>
+                    <b>Departamento:</b>{{item.departamento}}<br>
+                    <b>¿Cómo se entero?:</b>{{item.origen}}<br>
+                    <b>Grado de intéres:</b>{{item.nombre}}<br>
+                    <b>Equipo:</b>{{item.nombre}}<br>
+                    <b>Asignado a:</b>{{item.nombre}}<br>
+                </div>
+            </div>
+        </div>
+        <div class="example-container">
+            <h2>4. Cotización propuesta</h2>
+            <div cdkDropList [cdkDropListData]="cotizaciones" class="example-list" (cdkDropListDropped)="drop($event)">
+                <div class="example-box" *ngFor="let item of cotizaciones" cdkDrag>
+                    <b>Nombre:</b>{{item.nombre}}<br>
+                    <b>Celular:</b>{{item.celular}}<br>
+                    <b>Departamento:</b>{{item.departamento}}<br>
+                    <b>¿Cómo se entero?:</b>{{item.origen}}<br>
+                    <b>Grado de intéres:</b>{{item.nombre}}<br>
+                    <b>Equipo:</b>{{item.nombre}}<br>
+                    <b>Asignado a:</b>{{item.nombre}}<br>
+                </div>
+            </div>
+        </div>
+        <div class="example-container">
+            <h2>5. Negociación</h2>
+            <div cdkDropList [cdkDropListData]="negocios" class="example-list" (cdkDropListDropped)="drop($event)">
+                <div class="example-box" *ngFor="let item of negocios" cdkDrag>
+                    <b>Nombre:</b>{{item.nombre}}<br>
+                    <b>Celular:</b>{{item.celular}}<br>
+                    <b>Departamento:</b>{{item.departamento}}<br>
+                    <b>¿Cómo se entero?:</b>{{item.origen}}<br>
+                    <b>Grado de intéres:</b>{{item.nombre}}<br>
+                    <b>Equipo:</b>{{item.nombre}}<br>
+                    <b>Asignado a:</b>{{item.nombre}}<br>
+                </div>
+            </div>
+        </div>
+        <div class="example-container">
+            <h2>6. Reserva</h2>
+            <div cdkDropList [cdkDropListData]="reservas" class="example-list" (cdkDropListDropped)="drop($event)">
+                <div class="example-box" *ngFor="let item of reservas" cdkDrag>
+                    <b>Nombre:</b>{{item.nombre}}<br>
+                    <b>Celular:</b>{{item.celular}}<br>
+                    <b>Departamento:</b>{{item.departamento}}<br>
+                    <b>¿Cómo se entero?:</b>{{item.origen}}<br>
+                    <b>Grado de intéres:</b>{{item.nombre}}<br>
+                    <b>Equipo:</b>{{item.nombre}}<br>
+                    <b>Asignado a:</b>{{item.nombre}}<br>
+                </div>
+            </div>
+        </div>
+        <div class="example-container">
+            <h2>7. Cuota inicial completa</h2>
+            <div cdkDropList [cdkDropListData]="iniciales" class="example-list" (cdkDropListDropped)="drop($event)">
+                <div class="example-box" *ngFor="let item of iniciales" cdkDrag>
+                    <b>Nombre:</b>{{item.nombre}}<br>
+                    <b>Celular:</b>{{item.celular}}<br>
+                    <b>Departamento:</b>{{item.departamento}}<br>
+                    <b>¿Cómo se entero?:</b>{{item.origen}}<br>
+                    <b>Grado de intéres:</b>{{item.nombre}}<br>
+                    <b>Equipo:</b>{{item.nombre}}<br>
+                    <b>Asignado a:</b>{{item.nombre}}<br>
+                </div>
+            </div>
+        </div>
+        <div class="example-container">
+            <h2>8. Armado de carpetas</h2>
+            <div cdkDropList [cdkDropListData]="carpetas" class="example-list" (cdkDropListDropped)="drop($event)">
+                <div class="example-box" *ngFor="let item of carpetas" cdkDrag>
+                    <b>Nombre:</b>{{item.nombre}}<br>
+                    <b>Celular:</b>{{item.celular}}<br>
+                    <b>Departamento:</b>{{item.departamento}}<br>
+                    <b>¿Cómo se entero?:</b>{{item.origen}}<br>
+                    <b>Grado de intéres:</b>{{item.nombre}}<br>
+                    <b>Equipo:</b>{{item.nombre}}<br>
+                    <b>Asignado a:</b>{{item.nombre}}<br>
+                </div>
+            </div>
+        </div>
+        <div class="example-container">
+            <h2>9. Cierre ganado</h2>
+            <div cdkDropList [cdkDropListData]="ganados" class="example-list" (cdkDropListDropped)="drop($event)">
+                <div class="example-box" *ngFor="let item of ganados" cdkDrag>
+                    <b>Nombre:</b>{{item.nombre}}<br>
+                    <b>Celular:</b>{{item.celular}}<br>
+                    <b>Departamento:</b>{{item.departamento}}<br>
+                    <b>¿Cómo se entero?:</b>{{item.origen}}<br>
+                    <b>Grado de intéres:</b>{{item.nombre}}<br>
+                    <b>Equipo:</b>{{item.nombre}}<br>
+                    <b>Asignado a:</b>{{item.nombre}}<br>
+                </div>
+            </div>
+        </div>
+        <div class="example-container">
+            <h2>10. Cierre perdido</h2>
+            <div cdkDropList [cdkDropListData]="perdidos" class="example-list" (cdkDropListDropped)="drop($event)">
+                <div class="example-box" *ngFor="let item of perdidos" cdkDrag>
+                    <b>Nombre:</b>{{item.nombre}}<br>
+                    <b>Celular:</b>{{item.celular}}<br>
+                    <b>Departamento:</b>{{item.departamento}}<br>
+                    <b>¿Cómo se entero?:</b>{{item.origen}}<br>
+                    <b>Grado de intéres:</b>{{item.nombre}}<br>
+                    <b>Equipo:</b>{{item.nombre}}<br>
+                    <b>Asignado a:</b>{{item.nombre}}<br>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
