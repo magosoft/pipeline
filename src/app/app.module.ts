@@ -8,11 +8,13 @@ import {ScrollingModule} from '@angular/cdk/scrolling';
 import {MatIconModule} from "@angular/material/icon";
 import {MatButtonToggleModule} from "@angular/material/button-toggle";
 import { PipelineComponent } from './components/pipeline/pipeline.component';
+import { LeadsComponent } from './components/pipeline/leads/leads.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    PipelineComponent
+    PipelineComponent,
+    LeadsComponent
   ],
   imports: [
     BrowserModule, 

@@ -1,4 +1,4 @@
-import { CdkDragDrop,  moveItemInArray, transferArrayItem } from '@angular/cdk/drag-drop';
+import { CdkDragDrop, moveItemInArray, transferArrayItem } from '@angular/cdk/drag-drop';
 import { Component, OnInit } from '@angular/core';
 import { PipelineCard } from 'src/app/models/pipeline-card';
 
@@ -9,7 +9,7 @@ import { PipelineCard } from 'src/app/models/pipeline-card';
 })
 export class PipelineComponent implements OnInit {
   search: string;
- 
+
   captados: PipelineCard[];
   interesados: PipelineCard[];
   visitas: PipelineCard[];
@@ -23,7 +23,7 @@ export class PipelineComponent implements OnInit {
 
   constructor() {
     //this.pipeline = new Pipeline();
-    this.captados= [new PipelineCard(),new PipelineCard(),new PipelineCard(),new PipelineCard(),new PipelineCard()];
+    this.captados = [new PipelineCard(), new PipelineCard(), new PipelineCard(), new PipelineCard(), new PipelineCard()];
     this.interesados = [];
     this.visitas = [];
     this.cotizaciones = [];
@@ -33,26 +33,26 @@ export class PipelineComponent implements OnInit {
     this.carpetas = [];
     this.ganados = [];
     this.perdidos = [];
-   }
+  }
 
   ngOnInit(): void {
 
   }
-  onLoadPipeline():void{
+  onLoadPipeline(): void {
 
   }
-  onAddNewProspect():void{
+  onAddNewProspect(): void {
 
   }
-  drop(event: CdkDragDrop<PipelineCard[]>):void{
+  drop(event: CdkDragDrop<PipelineCard[]>): void {
     if (event.previousContainer === event.container) {
       moveItemInArray(event.container.data, event.previousIndex, event.currentIndex);
     } else {
-
-      /*transferArrayItem(event.previousContainer.data,
+      //console.log(event);
+      transferArrayItem(event.previousContainer.data,
                         event.container.data,
                         event.previousIndex,
-                        event.currentIndex);*/
+                        event.currentIndex);
     }
   }
 }
